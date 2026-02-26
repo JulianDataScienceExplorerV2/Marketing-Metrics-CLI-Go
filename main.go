@@ -306,15 +306,12 @@ func main() {
 	// Best / worst
 	if len(all) > 1 {
 		fmt.Printf("%sBest ROAS  :%s %s (%.2fx)\n", green, reset, all[0].Name, all[0].ROAS)
-		fmt.Printf("%sLowest CPA :%s %s ($%.2f)\n\n", yellow, reset,
-			func() (string, float64) {
-				best := all[0]
-				for _, m := range all[1:] {
-					if m.Conversions > 0 && m.CPA < best.CPA {
-						best = m
-					}
-				}
-				return best.Name, best.CPA
-			}())
+		bestCPA := all[0]
+		for _, m := range all[1:] {
+			if m.Conversions > 0 && m.CPA < bestCPA.CPA {
+				bestCPA = m
+			}
+		}
+		fmt.Printf("%sLowest CPA :%s %s ($%.2f)\n\n", yellow, reset, bestCPA.Name, bestCPA.CPA)
 	}
 }
