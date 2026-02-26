@@ -4,6 +4,12 @@ A command-line tool that reads campaign performance data from a CSV file and com
 
 Una herramienta de linea de comandos que lee datos de campanas de marketing desde un CSV y calcula KPIs de marketing digital — construida con la libreria estandar de Go, sin dependencias externas.
 
+<br/>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JulianDataScienceExplorerV2/Marketing-Metrics-CLI-Go/main/assets/campaign_performance.png" alt="Campaign Performance Bubble Chart" width="800"/>
+</p>
+<br/>
+
 ---
 
 ## Key Metrics / Metricas Calculadas
